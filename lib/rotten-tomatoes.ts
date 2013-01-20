@@ -28,7 +28,7 @@ export interface Movie {
 }
 
 export class RottenTomatoes {
-    get_request : {};
+    private get_request : {};
     constructor(public apikey: string) {
         this.get_request = {
             host: 'api.rottentomatoes.com',
@@ -36,7 +36,7 @@ export class RottenTomatoes {
         }
     }
 
-    setup(api: string, limit?: number, country?: string) {
+    private setup(api: string, limit?: number, country?: string): {} {
         return _.extend(this.get_request, {
             limit: limit,
             country: country,
@@ -46,13 +46,13 @@ export class RottenTomatoes {
         })
     }
 
-    getBoxOfficeMovies(callback: (movies: Movie []) => any, limit = 16, country = 'us') {
+    getBoxOfficeMovies(callback: (error: any, movies: Movie []) => any, limit = 16, country = 'us') {
         var options = this.setup('box_office', limit, country);
 
         var req = http.get(options, result => {
             var data = '';
             result.on('data', d => data += d);
-            result.on('end', () => callback(JSON.parse(data)["movies"]));
+            result.on('end', () => callback(null, JSON.parse(data)["movies"]));
         });
 
         req.on('error', e => console.error(e));
