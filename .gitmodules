@@ -1,0 +1,9 @@
+[submodule "typings/remote-typings"]
+	path = typings/remote-typings
+	url = git://github.com/soywiz/typescript-node-definitions.git
+[submodule "d/remote"]
+	path = d/remote
+	url = git://github.com/soywiz/typescript-node-definitions.git
+[submodule "d"]
+	path = d
+	url = git://github.com/soywiz/typescript-node-definitions.git
