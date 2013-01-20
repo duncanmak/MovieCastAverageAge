@@ -26,21 +26,22 @@
     <Content Include="app.js">
       <DependentUpon>app.ts</DependentUpon>
     </Content>
+    <Content Include="package.json" />
     <Content Include="test.js">
       <DependentUpon>test.ts</DependentUpon>
     </Content>
     <Content Include="lib\rotten-tomatoes.js">
       <DependentUpon>lib\rotten-tomatoes.ts</DependentUpon>
     </Content>
-    <Content Include="lib\themoviedb.js">
-      <DependentUpon>lib\themoviedb.ts</DependentUpon>
+    <Content Include="lib\tmdb.js">
+      <DependentUpon>lib\tmdb.ts</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="test.ts" />
     <TypeScriptCompile Include="lib\rotten-tomatoes.ts" />
-    <TypeScriptCompile Include="lib\themoviedb.ts" />
+    <TypeScriptCompile Include="lib\tmdb.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

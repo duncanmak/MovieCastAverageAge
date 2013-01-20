@@ -9,7 +9,7 @@ export class TMDB {
 
     thisYear: number;
 
-    URL(method: String): string {
+    private URL(method: String): string {
         return util.format("%s/%s", TMDB.URL, method);
     }
     constructor(public api_key: string) {
