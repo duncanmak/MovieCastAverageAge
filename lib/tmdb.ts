@@ -3,6 +3,7 @@
 
 import request = module('request');
 import util = module('util');
+import _ = module('underscore');
 
 export class TMDB {
     static URL = "http://private-1a29-themoviedb.apiary.io/3";
@@ -31,8 +32,10 @@ export class TMDB {
         request.get(
             { url: this.URL("/search/person"), json: true, qs: { api_key: this.api_key, query: name }},
             (error, response, body) => {
-                var id = body["results"][0]["id"];
-                callback(id);
+                if (_.isEmpty(body["results"]) == false) {
+                    var id = body["results"][0]["id"];
+                    callback(id);
+                }
             });
     }
 }
