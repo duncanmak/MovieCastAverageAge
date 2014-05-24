@@ -1,4 +1,4 @@
-﻿import callbacks = require('./callbacks');
+import callbacks = require('./callbacks');
 import readline = require('readline');
 
 interface App {

@@ -1,4 +1,4 @@
-﻿
+
 import util = require('util');
 import http = require('http');
 import _ = require('underscore');

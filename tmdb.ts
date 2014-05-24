@@ -1,4 +1,4 @@
-﻿import request = require('request');
+import request = require('request');
 import url = require('url');
 import _ = require('underscore');
 

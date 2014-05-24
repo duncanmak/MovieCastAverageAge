@@ -1,4 +1,4 @@
-﻿import _ = require('underscore');
+import _ = require('underscore');
 import async = require('async');
 import rt = require('./rotten-tomatoes');
 import secret = require('./secret')
