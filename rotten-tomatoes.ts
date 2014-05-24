@@ -1,9 +1,7 @@
-/// <reference path='../d/node.d.ts' />
-/// <reference path='../d/underscore.d.ts' />
-
-import util = module('util');
-import http = module('http');
-import _ = module('underscore');
+﻿
+import util = require('util');
+import http = require('http');
+import _ = require('underscore');
 
 export interface CastMember {
     name: string;
@@ -22,13 +20,13 @@ export interface Movie {
     ratings: {};
     synopsis: string;
     posters: {};
-    abridged_cast: CastMember [];
+    abridged_cast: CastMember[];
     alternate_ids: {};
     links: {};
 }
 
 export class RottenTomatoes {
-    private get_request : {};
+    private get_request: {};
     constructor(public apikey: string) {
         this.get_request = {
             host: 'api.rottentomatoes.com',
@@ -46,7 +44,7 @@ export class RottenTomatoes {
         })
     }
 
-    getBoxOfficeMovies(callback: (error: any, movies: Movie []) => any, limit = 16, country = 'us') {
+    getBoxOfficeMovies(callback: (error: any, movies: Movie[]) => any, limit = 16, country = 'us') {
         var options = this.setup('box_office', limit, country);
 
         var req = http.get(options, result => {
