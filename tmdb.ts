@@ -1,21 +1,20 @@
 ﻿import request = require('request');
-import util = require('util');
+import url = require('url');
 import _ = require('underscore');
 
 export class TMDB {
-    // static URL = "http://private-1a29-themoviedb.apiary.io/3";
-
-    static URL = "http://api.themoviedb.org/3";
+    static URL = "http://api.themoviedb.org/3/";
     thisYear: number;
 
-    private URL(method: String): string {
-        return util.format("%s/%s", TMDB.URL, method);
+    private URL(method: string): string {
+        return url.resolve(TMDB.URL, method);
     }
+
     constructor(public api_key: string) {
         this.thisYear = new Date().getFullYear();
     }
 
-    getAge(name: String, callback: (age: number) => any) {
+    getAge(name: string, callback: (age: number) => any) {
         this.getID(name, id => {
             request.get(
                 { url: this.URL("person/" + id), json: true, qs: { api_key: this.api_key } },
@@ -26,7 +25,7 @@ export class TMDB {
         });
     }
 
-    getID(name: String, callback: (id: number) => any) {
+    getID(name: string, callback: (id: number) => any) {
         request.get(
             { url: this.URL("search/person"), json: true, qs: { api_key: this.api_key, query: name } },
             (error, response, body) => {
