@@ -36,6 +36,7 @@
     <TypeScriptCompile Include="app.ts" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <TypeScriptCompile Include="callbacks.ts" />
     <TypeScriptCompile Include="node.d.ts" />
     <TypeScriptCompile Include="rotten-tomatoes.ts" />
     <TypeScriptCompile Include="secret.ts" />
